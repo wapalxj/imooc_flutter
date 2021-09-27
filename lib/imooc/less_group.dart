@@ -16,7 +16,16 @@ class LessGroup extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          appBar: AppBar(title: Text('Flutter LessGroup')),
+          appBar: AppBar(
+            title: Text('Flutter LessGroup'),
+            leading: GestureDetector(
+              onTap: () {
+                //返回
+                Navigator.pop(context);
+              },
+              child: Icon(Icons.arrow_back),
+            ),
+          ),
           body: Container(
             decoration: BoxDecoration(color: Colors.white),
             alignment: Alignment.center,

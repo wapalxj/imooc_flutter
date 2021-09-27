@@ -14,7 +14,19 @@ class PluginUse extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter 包和插件Demoe'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter PluginUse'),
+          leading: GestureDetector(
+            onTap: () {
+              //返回
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back),
+          ),
+        ),
+        body: MyHomePage(title: 'Flutter 包和插件Demoe'),
+      ),
     );
   }
 }

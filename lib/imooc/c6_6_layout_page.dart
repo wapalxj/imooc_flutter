@@ -36,11 +36,11 @@ class _FulStateState extends State<_FulState> {
             },
             items: [
               BottomNavigationBarItem(
-                  label: "首页",
+                  label: "home",
                   icon: Icon(Icons.home, color: Colors.grey),
                   activeIcon: Icon(Icons.home, color: Colors.blue)),
               BottomNavigationBarItem(
-                  label: "列表",
+                  label: "list",
                   icon: Icon(Icons.list, color: Colors.grey),
                   activeIcon: Icon(Icons.list, color: Colors.blue)),
             ],

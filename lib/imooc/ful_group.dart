@@ -25,7 +25,16 @@ class _FulGroupState extends State<FulGroup> {
           primarySwatch: Colors.blue,
         ),
         home: Scaffold(
-          appBar: AppBar(title: Text('Flutter FulGroup')),
+          appBar: AppBar(
+            title: Text('Flutter FulGroup'),
+            leading: GestureDetector(
+              onTap: () {
+                //返回
+                Navigator.pop(context);
+              },
+              child: Icon(Icons.arrow_back),
+            ),
+          ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentIndex,
             onTap: (index) {
