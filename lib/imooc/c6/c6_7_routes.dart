@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:imooc_flutter/imooc/ful_group.dart';
-import 'package:imooc_flutter/imooc/less_group.dart';
-import 'package:imooc_flutter/imooc/plugin_user.dart';
+import 'package:imooc_flutter/imooc/c6/ful_group.dart';
+import 'package:imooc_flutter/imooc/c6/less_group.dart';
+import 'package:imooc_flutter/imooc/c6/plugin_user.dart';
 
 import 'c6_12_app_lifecycle.dart';
 import 'c6_13_theme.dart';

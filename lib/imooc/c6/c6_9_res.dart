@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:imooc_flutter/imooc/ful_group.dart';
-import 'package:imooc_flutter/imooc/less_group.dart';
-import 'package:imooc_flutter/imooc/plugin_user.dart';
 
 //使用资源文件
 void main() {
@@ -22,7 +19,7 @@ class _ResPageState extends State<ResPage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter ResPage'),
+          title: Text('Flutter ResPage 100,000', style: TextStyle(fontFamily: "Dinot")),
           leading: GestureDetector(
             onTap: () {
               //返回

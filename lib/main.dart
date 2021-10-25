@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:imooc_flutter/imooc/plugin_user.dart';
+import 'package:imooc_flutter/imooc/c6/plugin_user.dart';
 
 void main() {
   print("start run");

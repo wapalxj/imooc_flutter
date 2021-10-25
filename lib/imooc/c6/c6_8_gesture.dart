@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:imooc_flutter/imooc/ful_group.dart';
-import 'package:imooc_flutter/imooc/less_group.dart';
-import 'package:imooc_flutter/imooc/plugin_user.dart';
 
 void main() {
   print("start run");

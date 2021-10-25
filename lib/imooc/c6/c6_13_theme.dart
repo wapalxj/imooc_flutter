@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-//应用生命周期
 void main() {
   print("start run");
   runApp(DynamicTheme());
@@ -23,12 +22,13 @@ class _DynamicThemeState extends State<DynamicTheme> {
       title: 'theme',
       theme: ThemeData(
         // brightness: Brightness.dark,
+        fontFamily: "Dinot",
         brightness: _brightness,
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter FulGroup'),
+          title: Text('Flutter FulGroup 120,000'),
           leading: GestureDetector(
             onTap: () {
               //返回
