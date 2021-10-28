@@ -29,6 +29,9 @@ class _ArticlePageState extends State<ArticlePage> {
   @override
   void initState() {
     super.initState();
+
+    //初始请求数据
+    _pullToRefresh();
   }
 
   @override
@@ -38,6 +41,22 @@ class _ArticlePageState extends State<ArticlePage> {
 
   @override
   void dispose() {
+    _controller.dispose();
     super.dispose();
+  }
+
+  void _pullToRefresh() async {
+    curPage = 0;
+    Iterable<Future> futures = [_getArticleList(), _getBanner()];
+    await Future.wait(futures);
+    _isLoading = true;
+  }
+
+  Future<String> _getArticleList() async {
+    return "";
+  }
+
+  Future<String> _getBanner() async {
+    return "";
   }
 }
