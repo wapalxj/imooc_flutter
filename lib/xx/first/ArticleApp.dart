@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_color_plugin/flutter_color_plugin.dart';
-import 'package:imooc_flutter/first/ui/page/page_article.dart';
+import 'package:imooc_flutter/xx/first/ui/page/page_article.dart';
 
 void main() => runApp(ArticleApp());
 
