@@ -4,7 +4,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 import 'package:imooc_flutter/xx/first/http/api.dart';
+import 'package:imooc_flutter/xx/first/ui/page/page_webview.dart';
 
 class ArticlePage extends StatefulWidget {
   const ArticlePage({Key? key}) : super(key: key);
@@ -45,7 +47,6 @@ class _ArticlePageState extends State<ArticlePage> {
 
       ///当前滑动位置到达底部，加载更多
       if (maxScroll == pixels && articles.length < listTotalSize) {
-
         print("_getArticleList== listTotalSize== ${listTotalSize}");
 
         _getArticleList();
@@ -154,10 +155,10 @@ class _ArticlePageState extends State<ArticlePage> {
   Widget _buildItem(int position) {
     // return Text("item ==== $i in ${articles.length}");
 
-    // if (position == 0) {
-    //   //banner
-    //   return Container(height: 180, child: _bannerView());
-    // }
+    if (position == 0) {
+      //banner
+      return Container(height: 180, child: _bannerView());
+    }
 
     var color;
     if (position % 2 == 0) {
@@ -169,6 +170,23 @@ class _ArticlePageState extends State<ArticlePage> {
         color: color,
         height: 100,
         child: Text("item ==== $position in ${articles.length}"));
+  }
+
+  Widget _bannerView() {
+    return InkWell(
+      //快速添加各种触摸事件的widget
+      child: Container(
+        height: 180,
+        color: ColorUtil.color("#ff6200"),
+        child: Text("banner"),
+      ),
+      onTap: () {
+        print("_bannerView====点击");
+        Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+          return WebViewPage();
+        }));
+      },
+    );
   }
 
 // Widget _bannerView() {
