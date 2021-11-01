@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+void main() {
+  print("start run");
+  runApp(PhotoApp());
+}
+
 class PhotoApp extends StatefulWidget {
   const PhotoApp({Key? key}) : super(key: key);
 
@@ -11,7 +16,14 @@ class PhotoApp extends StatefulWidget {
 class _PhotoAppState extends State<PhotoApp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      title: 'theme',
+      theme: ThemeData(
+        brightness: Brightness.light,
+        fontFamily: "Dinot",
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
         appBar: AppBar(
           title: Text('PhotoApp'),
           leading: GestureDetector(
@@ -22,6 +34,12 @@ class _PhotoAppState extends State<PhotoApp> {
             child: Icon(Icons.arrow_back),
           ),
         ),
-        body: Container(child: Center()));
+        body: Container(
+          child: Center(
+            child: Text("sadasd"),
+          ),
+        ),
+      ),
+    );
   }
 }
