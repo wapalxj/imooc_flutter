@@ -27,6 +27,8 @@ class _WebViewPageState extends State<WebViewPage> {
   void initState() {
     super.initState();
     flutterWebViewPlugin.close();
+
+    //这个回调不会触发，不知道是什么问题
     _onStateChanged =flutterWebViewPlugin.onStateChanged.listen((state) {
       print("WebViewState00000====$state");
       //监听webview的加载
