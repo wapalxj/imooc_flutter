@@ -2,7 +2,9 @@ import 'package:dio/dio.dart';
 import 'api.dart';
 
 void main() async{
-  var  r = await HttpManager.getInstance().request("http://www.baidu.com");
+  // var  r = await HttpManager.getInstance().request("http://www.baidu.com");
+  // var r = await  Api.getArticleList(0);
+  var r = await  Api.getBanner();
   print(r);
 }
 
@@ -32,7 +34,8 @@ class HttpManager {
       Options option = new Options(method: method);
       Response response = await _dio.request(url, options: option);
       return response.data;
-    } catch (e) {
+    } catch (e,s) {
+      print(e);
       return null;
     }
   }
