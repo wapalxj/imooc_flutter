@@ -21,11 +21,9 @@ class _AnimationStateState extends State<AnimationState>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        // lowerBound: 100, //起始值
-        // upperBound: 300, //最大值
         lowerBound: 0, //起始值
         upperBound: 1, //最大值
-        duration: Duration(seconds: 3),
+        duration: Duration(seconds: 2),
         vsync: this);
 
     _controller.addListener(() {
@@ -34,9 +32,16 @@ class _AnimationStateState extends State<AnimationState>
       setState(() {});
     });
 
-
-    //使用内置的ColorTween
-    // _tween = ColorTween(begin: Colors.red, end: Colors.yellow);
+    _controller.addStatusListener((status) {
+      //监听执行状态,实现无线循环
+      if (status == AnimationStatus.completed) {
+        //forward()结束后是completed
+        _controller.reverse();
+      } else if (status == AnimationStatus.dismissed) {
+        //reverse()结束后是dismissed
+        _controller.forward();
+      }
+    });
 
     //使用自定义的MyColorTween
     _tween = MyColorTween(begin: Colors.red, end: Colors.yellow);
@@ -44,7 +49,6 @@ class _AnimationStateState extends State<AnimationState>
     _colorAnimation = _tween.animate(_controller);
 
     _controller.forward();
-
   }
 
   @override
@@ -60,13 +64,26 @@ class _AnimationStateState extends State<AnimationState>
         appBar: AppBar(
           title: Text("anim"),
         ),
-        body: Container(
-            color: _colorAnimation.value,
-            // width: _controller.value,
-            // height: _controller.value,
-            width: 100,
-            height: 200,
-            child: Text("anim")),
+        body: Column(
+          children: [
+            Container(
+                color: _colorAnimation.value,
+                // width: _controller.value,
+                // height: _controller.value,
+                width: 100,
+                height: 200,
+                child: Text("anim")),
+            ElevatedButton(
+                onPressed: () {
+                  if (_controller.isAnimating) {
+                    _controller.stop();
+                  } else {
+                    _controller.forward();
+                  }
+                },
+                child: Text("点我"))
+          ],
+        ),
       ),
     );
   }
