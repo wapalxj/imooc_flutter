@@ -7,8 +7,8 @@ class AppInit {
 
   ///hide your splash screen
   static Future<String> init() async {
-    Future.delayed(Duration(milliseconds: 2000), () {
-      //2秒后隐藏 SplashScreen
+   await Future.delayed(Duration(milliseconds: 3000), () {
+      //3秒后隐藏 SplashScreen
       FlutterSplashScreen.hide();
     });
     return "${EYE_TAG_} AppInit()   splash被隐藏了";
